@@ -25,17 +25,18 @@ func isEvenOrOdd(_ arr: [Int], evenOrOdd: Bool, _ closure: (_ myArr:[Int], _ eve
   return closure(arr, evenOrOdd)
 }
 
-let isEven = isEvenOrOdd([1,2,3,4,5], evenOrOdd: false, { (arr: [Int], evenOrOdd: Bool) -> [Int] in
+let isEven = isEvenOrOdd([1, 2, 3, 4, 5, 6], evenOrOdd: true, { (arr: [Int], evenOrOdd: Bool) -> [Int] in
   let even = evenOrOdd ? 0 : 1
   return arr.filter { ($0 % 2) == even }
 })
 
 struct SumClosure: View {
-  @State var sum: Int = 0
-  @State var myMax: Int = 0
-  @State var myUppercase: [String] = ["This","is","Sparta"]
-  @State var myOnlyEven: [Int] = [1,2,3,4,5,6]
-  @State var theFirstLetterOfStrings: String = "This"
+  @State private var sum: Int = 0
+  @State private var myMax: Int = 0
+  @State private var myUppercase: [String] = ["This","is","Sparta"]
+  @State private var myOnlyEven: [Int] = [1,2,3,4,5,6]
+  @State private var theFirstLetterOfStrings: String = "This"
+  @State private var myIsEven = isEven
   var body: some View {
     Text("Sum: \(sum)")
     Text("Max: \(myMax)")
@@ -51,6 +52,8 @@ struct SumClosure: View {
       
       theFirstLetterOfStrings = returnTheFirstLetter(theFirstLetterOfStrings, theFirstLetterOfStrings)
       print("first Chars", theFirstLetterOfStrings)
+      
+      print(myIsEven)
     }
   }
 }
