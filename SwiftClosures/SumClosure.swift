@@ -14,7 +14,7 @@ let upperCase = { (arr: [String]) -> [String] in
 }
 
 let onlyEven = {(arr: [Int]) -> [Int] in
-  return arr.map { if (($0 % 2) != 0){ return $0 } }
+  return arr.filter{ ($0 % 2) != 0 }
 }
 
 struct SumClosure: View {
