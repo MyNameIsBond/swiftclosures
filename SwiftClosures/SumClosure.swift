@@ -21,6 +21,15 @@ let returnTheFirstLetter = {(first: String, second: String) -> String in
   return "\(first.prefix(1)) --- \(second.prefix(1))"
 }
 
+func isEvenOrOdd(_ arr: [Int], evenOrOdd: Bool, _ closure: (_ myArr:[Int], _ even: Bool) -> [Int]) -> [Int] {
+  return closure(arr, evenOrOdd)
+}
+
+let isEven = isEvenOrOdd([1,2,3,4,5], evenOrOdd: false, { (arr: [Int], evenOrOdd: Bool) -> [Int] in
+  let even = evenOrOdd ? 0 : 1
+  return arr.filter { ($0 % 2) == even }
+})
+
 struct SumClosure: View {
   @State var sum: Int = 0
   @State var myMax: Int = 0
