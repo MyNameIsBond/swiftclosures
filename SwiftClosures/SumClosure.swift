@@ -14,7 +14,7 @@ let upperCase = { (arr: [String]) -> [String] in
 }
 
 let onlyEven = {(arr: [Int]) -> [Int] in
-  return arr.filter{ ($0 % 2) == 0 }
+  return arr.filter{ $0 % 2 == 0 }
 }
 
 let returnTheFirstLetter = {(first: String, second: String) -> String in
@@ -27,8 +27,17 @@ func isEvenOrOdd(_ arr: [Int], evenOrOdd: Bool, _ closure: (_ myArr:[Int], _ eve
 
 let isEven = isEvenOrOdd([1, 2, 3, 4, 5, 6], evenOrOdd: true, { (arr: [Int], evenOrOdd: Bool) -> [Int] in
   let even = evenOrOdd ? 0 : 1
-  return arr.filter { ($0 % 2) == even }
+  return arr.filter { $0 % 2 == even }
 })
+
+func concatenateString(_ firstString: String, _ secondString: String, _ closure: (_ oneString:String, _ twoString: String) -> String ) -> String {
+  return closure(firstString, secondString)
+}
+
+let addTwoStrings = concatenateString("Ela re","paidia", { oneString,twoString in
+  return "\(oneString) \(twoString)"
+})
+
 
 struct SumClosure: View {
   @State private var sum: Int = 0
@@ -37,6 +46,7 @@ struct SumClosure: View {
   @State private var myOnlyEven: [Int] = [1,2,3,4,5,6]
   @State private var theFirstLetterOfStrings: String = "This"
   @State private var myIsEven = isEven
+  @State private var myTwoStrings: String = ""
   var body: some View {
     Text("Sum: \(sum)")
     Text("Max: \(myMax)")
@@ -54,6 +64,9 @@ struct SumClosure: View {
       print("first Chars", theFirstLetterOfStrings)
       
       print(myIsEven)
+      
+      myTwoStrings = addTwoStrings
+      print("concatenateString",myTwoStrings)
     }
   }
 }
