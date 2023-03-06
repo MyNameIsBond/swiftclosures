@@ -38,6 +38,11 @@ let addTwoStrings = concatenateString("Ela re","paidia", { oneString,twoString i
   return "\(oneString) \(twoString)"
 })
 
+let product = { (a: Int) -> (Int) -> Int in
+  return { (b: Int) -> Int in
+    return a + b
+  }
+}
 
 struct SumClosure: View {
   @State private var sum: Int = 0
@@ -47,6 +52,7 @@ struct SumClosure: View {
   @State private var theFirstLetterOfStrings: String = "This"
   @State private var myIsEven = isEven
   @State private var myTwoStrings: String = ""
+  @State private var productNum: Int = 2
   var body: some View {
     Text("Sum: \(sum)")
     Text("Max: \(myMax)")
@@ -67,6 +73,9 @@ struct SumClosure: View {
       
       myTwoStrings = addTwoStrings
       print("concatenateString",myTwoStrings)
+      
+      productNum = product(productNum)(productNum)
+      print(productNum)
     }
   }
 }
