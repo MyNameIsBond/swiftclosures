@@ -44,6 +44,14 @@ let product = { (a: Int) -> (Int) -> Int in
   }
 }
 
+func onlyOneFigure (_ arr:[Int], _ closure: ( ([Int]) -> [Int])) -> [Int] {
+  return closure(arr)
+}
+
+let callOnlyOneFigure =  onlyOneFigure([11, 2, 3, 4, 11, 55, 199], { arr in
+  return arr.filter { $0 < 10 }
+})
+
 struct SumClosure: View {
   @State private var sum: Int = 0
   @State private var myMax: Int = 0
@@ -53,6 +61,8 @@ struct SumClosure: View {
   @State private var myIsEven = isEven
   @State private var myTwoStrings: String = ""
   @State private var productNum: Int = 2
+  @State private var myOnlyFigure: [Int] = [11, 2, 3, 4, 11, 55, 199]
+  
   var body: some View {
     Text("Sum: \(sum)")
     Text("Max: \(myMax)")
@@ -75,7 +85,12 @@ struct SumClosure: View {
       print("concatenateString",myTwoStrings)
       
       productNum = product(productNum)(productNum)
-      print(productNum)
+      print("product", productNum)
+      
+      
+      myOnlyFigure = callOnlyOneFigure
+      print("myOnlyFigure", myOnlyFigure)
+      
     }
   }
 }
