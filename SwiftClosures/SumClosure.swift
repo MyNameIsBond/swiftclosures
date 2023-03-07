@@ -52,6 +52,10 @@ let callOnlyOneFigure =  onlyOneFigure([11, 2, 3, 4, 11, 55, 199], { arr in
   return arr.filter { $0 < 10 }
 })
 
+let sortDescending = {(arr: [Int]) -> [Int] in
+  return arr.sorted { $0 > $1 }
+}
+
 struct SumClosure: View {
   @State private var sum: Int = 0
   @State private var myMax: Int = 0
@@ -62,6 +66,7 @@ struct SumClosure: View {
   @State private var myTwoStrings: String = ""
   @State private var productNum: Int = 2
   @State private var myOnlyFigure: [Int] = [11, 2, 3, 4, 11, 55, 199]
+  @State private var sortIntArray: [Int] = [11, 22, 1, 3, 4, 566, 77, 10]
   
   var body: some View {
     Text("Sum: \(sum)")
@@ -91,6 +96,8 @@ struct SumClosure: View {
       myOnlyFigure = callOnlyOneFigure
       print("myOnlyFigure", myOnlyFigure)
       
+      print("Not Sorted",sortIntArray)
+      print("Sorted",sortDescending(sortIntArray))
     }
   }
 }
