@@ -34,7 +34,7 @@ func concatenateString(_ firstString: String, _ secondString: String, _ closure:
   return closure(firstString, secondString)
 }
 
-let addTwoStrings = concatenateString("Ela re","paidia", { oneString,twoString in
+let addTwoStrings = concatenateString("to be","added together", { oneString,twoString in
   return "\(oneString) \(twoString)"
 })
 
@@ -79,7 +79,7 @@ struct SumClosure: View {
       theFirstLetterOfStrings = returnTheFirstLetter(theFirstLetterOfStrings, theFirstLetterOfStrings)
       print("first Chars", theFirstLetterOfStrings)
       
-      print(myIsEven)
+      print("myIsEven",myIsEven)
       
       myTwoStrings = addTwoStrings
       print("concatenateString",myTwoStrings)
