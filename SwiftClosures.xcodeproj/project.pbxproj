@@ -15,6 +15,7 @@
 		97254AD529AF457000C0EA04 /* SwiftClosuresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97254AD429AF457000C0EA04 /* SwiftClosuresUITests.swift */; };
 		97254AD729AF457000C0EA04 /* SwiftClosuresUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97254AD629AF457000C0EA04 /* SwiftClosuresUITestsLaunchTests.swift */; };
 		97254AE429AF461300C0EA04 /* SumClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97254AE329AF461300C0EA04 /* SumClosure.swift */; };
+		9753FBA629B7DBEC005AD8D5 /* EscapingClosures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753FBA529B7DBEC005AD8D5 /* EscapingClosures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		97254AD429AF457000C0EA04 /* SwiftClosuresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftClosuresUITests.swift; sourceTree = "<group>"; };
 		97254AD629AF457000C0EA04 /* SwiftClosuresUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftClosuresUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		97254AE329AF461300C0EA04 /* SumClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumClosure.swift; sourceTree = "<group>"; };
+		9753FBA529B7DBEC005AD8D5 /* EscapingClosures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapingClosures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				97254AC129AF457000C0EA04 /* SwiftClosures.entitlements */,
 				97254ABE29AF457000C0EA04 /* Preview Content */,
 				97254AE329AF461300C0EA04 /* SumClosure.swift */,
+				9753FBA529B7DBEC005AD8D5 /* EscapingClosures.swift */,
 			);
 			path = SwiftClosures;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				97254AE429AF461300C0EA04 /* SumClosure.swift in Sources */,
 				97254ABB29AF457000C0EA04 /* ContentView.swift in Sources */,
 				97254AB929AF457000C0EA04 /* SwiftClosuresApp.swift in Sources */,
+				9753FBA629B7DBEC005AD8D5 /* EscapingClosures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
