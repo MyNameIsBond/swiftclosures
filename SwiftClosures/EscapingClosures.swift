@@ -27,9 +27,34 @@ func escapingClosures(arr: [Int], closure: @escaping () -> Void) -> () -> Void {
   
 }
 
+func arrayOfClusres(_ closures: [(Int) -> Int]) -> (Int) -> Int  {
+  return { value in
+    return closures.reduce(value) { result, closure in
+      return closure(result)
+    }
+  }
+}
+
+let myClosures: [(Int) -> Int] = [
+    { value in value * 2 },
+    { value in value * 3 },
+    { value in value * 2 }
+]
+
+
+
+// The way to call this array of closures
+
 struct EscapingClosures: View {
+    @State var myresult: Int = 10
   var body: some View {
     Text("Welcome to Escaping Closures")
+    Button("Result") {
+      let combinedClosure = arrayOfClusres(myClosures)
+      let result = combinedClosure(myresult) // Should be 11
+      myresult = result
+      print(myresult)
+    }
   }
 }
 
